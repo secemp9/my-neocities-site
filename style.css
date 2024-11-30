@@ -1,24 +1,30 @@
 :root {
-  /* Base colors */
-  --deep-brown: #2C1810;
-  --medium-brown: #594031;
-  --light-brown: #8B6B4A;
-  --gold: #D4AF37;
-  --light-gold: #F4E4BC;
-  --cream: #FDF5E6;
+    /* Base colors */
+    --deep-brown: #2C1810;
+    --medium-brown: #594031;
+    --light-brown: #8B6B4A;
+    --gold: #D4AF37;
+    --light-gold: #F4E4BC;
+    --cream: #FDF5E6;
 
-  /* Light theme colors */
-  --bg-color: var(--cream);
-  --text-color: var(--deep-brown);
-  --card-bg: #ffffff;
-  --header-bg: var(--deep-brown);
+    /* Light theme colors */
+    --bg-color: var(--cream);
+    --text-color: var(--deep-brown);
+    --card-bg: #ffffff;
+    --header-bg: var(--deep-brown);
+    --link-color: var(--medium-brown);
+    --link-hover: var(--gold);
+    --code-bg: #f6f8fa;
 }
 
 [data-theme="dark"] {
-    --bg-color: var(--deep-brown);
+    --bg-color: #1a0f0a;
     --text-color: var(--light-gold);
-    --card-bg: var(--medium-brown);
-    --header-bg: #1a0f0a;
+    --card-bg: var(--deep-brown);
+    --header-bg: #140b07;
+    --link-color: var(--light-gold);
+    --link-hover: var(--gold);
+    --code-bg: var(--medium-brown);
 }
 
 [data-theme="dark"] h1 {
@@ -128,9 +134,21 @@
 }
 
 .post-meta {
-    color: var(--medium-brown);
+    color: var(--link-color);
     font-size: 0.9em;
     margin-bottom: 10px;
+}
+
+.blog-post pre {
+    background-color: var(--code-bg);
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    color: var(--text-color);
+}
+
+.blog-post code {
+    font-family: monospace;
 }
 
 /* Links page styles */
@@ -252,11 +270,11 @@ nav a:hover {
     display: inline-block;
     padding: 8px 15px;
     margin: 0 5px;
-    background-color: var(--deep-brown);
-    color: var(--gold);
+    background-color: var(--card-bg);
+    color: var(--text-color);
     text-decoration: none;
     border-radius: 6px;
-    border: 1px solid var(--gold);
+    border: 1px solid var(--light-brown);
     transition: all 0.2s ease;
 }
 
@@ -281,34 +299,35 @@ nav a:hover {
 
 .interests li {
     display: inline-block;
-    background-color: var(--light-gold);
-    color: var(--deep-brown);
+    background-color: var(--card-bg);
+    color: var(--text-color);
     padding: 5px 15px;
     margin: 5px;
     border-radius: 15px;
     font-size: 14px;
-    border: 1px solid var(--gold);
+    border: 1px solid var(--light-brown);
     transition: all 0.3s ease;
 }
 
 .interests li:hover {
-    background-color: var(--gold);
+    background-color: var(--link-hover);
+    color: var(--deep-brown);
     transform: translateY(-2px);
 }
 
 .professional-skills {
-    background: linear-gradient(45deg, var(--deep-brown), var(--medium-brown));
-    color: var(--light-gold);
+    background: var(--card-bg);
+    color: var(--text-color);
     padding: 20px;
     border-radius: 8px;
     margin: 20px 0;
-    border: 1px solid var(--gold);
+    border: 1px solid var(--light-brown);
 }
 
 .skill-tag {
     display: inline-block;
-    background-color: var(--gold);
-    color: var(--deep-brown);
+    background-color: var(--light-brown);
+    color: var(--bg-color);
     padding: 6px 12px;
     margin: 4px;
     border-radius: 20px;
@@ -317,6 +336,8 @@ nav a:hover {
 }
 
 .skill-tag:hover {
+    background-color: var(--gold);
+    color: var(--deep-brown);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
@@ -337,14 +358,15 @@ footer {
 }
 
 .visitor-counter {
-    background-color: var(--deep-brown);
-    color: var(--light-gold);
+    background-color: var(--card-bg);
+    color: var(--text-color);
     display: inline-block;
     padding: 5px 10px;
     font-family: monospace;
     margin-top: 10px;
     border-radius: 4px;
     font-size: 14px;
+    border: 1px solid var(--light-brown);
 }
 .blog-post.full {
     padding: 30px;
