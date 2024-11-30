@@ -1,0 +1,87 @@
+body {
+    background-color: #ffccff;
+    background-image: url('stars.gif');
+    font-family: 'Comic Sans MS', cursive;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 3px solid #ff66ff;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+}
+
+h1 {
+    color: #ff33cc;
+    text-shadow: 2px 2px #ffccff;
+}
+
+.marquee {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+nav {
+    background-color: #ff99ff;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+nav a {
+    color: #660066;
+    text-decoration: none;
+    padding: 5px 15px;
+    margin: 0 5px;
+}
+
+nav a:hover {
+    background-color: #ff66ff;
+    border-radius: 5px;
+}
+
+.profile-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #ff66ff;
+}
+
+.updates {
+    background-color: #ffccff;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 2px dashed #ff66ff;
+    padding-top: 10px;
+}
+
+.visitor-counter {
+    background-color: #000;
+    color: #0f0;
+    display: inline-block;
+    padding: 5px 10px;
+    font-family: monospace;
+    margin-top: 10px;
+}
