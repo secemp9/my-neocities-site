@@ -1,19 +1,28 @@
+:root {
+  --deep-brown: #2C1810;
+  --medium-brown: #594031;
+  --light-brown: #8B6B4A;
+  --gold: #D4AF37;
+  --light-gold: #F4E4BC;
+  --cream: #FDF5E6;
+}
+
 body {
-    background-color: #f5f5f5;
+    background-color: var(--cream);
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     margin: 0;
     padding: 20px;
-    color: #2d2d2d;
+    color: var(--deep-brown);
 }
 
 .container {
     max-width: 800px;
     margin: 0 auto;
     background-color: #ffffff;
-    border: 1px solid #e1e4e8;
+    border: 1px solid var(--light-brown);
     border-radius: 8px;
     padding: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(44, 24, 16, 0.1);
 }
 
 header {
@@ -21,37 +30,43 @@ header {
 }
 
 h1 {
-    color: #24292e;
+    color: var(--deep-brown);
     font-weight: 600;
+    border-bottom: 3px solid var(--gold);
+    display: inline-block;
+    padding-bottom: 5px;
 }
 
 .marquee {
-    background-color: #24292e;
-    color: #fff;
+    background-color: var(--deep-brown);
+    color: var(--gold);
     padding: 10px;
     margin: 10px 0;
     border-radius: 4px;
+    border: 1px solid var(--gold);
 }
 
 nav {
-    background-color: #f6f8fa;
+    background-color: var(--deep-brown);
     padding: 10px;
     text-align: center;
     border-radius: 6px;
     margin: 10px 0;
+    border-bottom: 2px solid var(--gold);
 }
 
 nav a {
-    color: #0366d6;
+    color: var(--light-gold);
     text-decoration: none;
     padding: 5px 15px;
     margin: 0 5px;
     font-weight: 500;
+    transition: all 0.3s ease;
 }
 
 nav a:hover {
-    background-color: #0366d6;
-    color: white;
+    background-color: var(--gold);
+    color: var(--deep-brown);
     border-radius: 4px;
 }
 
@@ -71,25 +86,26 @@ nav a:hover {
     display: inline-block;
     padding: 8px 15px;
     margin: 0 5px;
-    background-color: #f6f8fa;
-    color: #24292e;
+    background-color: var(--deep-brown);
+    color: var(--gold);
     text-decoration: none;
     border-radius: 6px;
-    border: 1px solid #e1e4e8;
+    border: 1px solid var(--gold);
     transition: all 0.2s ease;
 }
 
 .social-links a:hover {
-    background-color: #0366d6;
-    color: white;
-    border-color: #0366d6;
+    background-color: var(--gold);
+    color: var(--deep-brown);
+    transform: translateY(-2px);
 }
 
 .interests {
-    background-color: #f6f8fa;
+    background-color: #fff;
     padding: 15px;
     border-radius: 6px;
     margin: 20px 0;
+    border: 1px solid var(--light-brown);
 }
 
 .interests ul {
@@ -99,12 +115,44 @@ nav a:hover {
 
 .interests li {
     display: inline-block;
-    background-color: #e1e4e8;
-    color: #24292e;
+    background-color: var(--light-gold);
+    color: var(--deep-brown);
     padding: 5px 15px;
     margin: 5px;
     border-radius: 15px;
     font-size: 14px;
+    border: 1px solid var(--gold);
+    transition: all 0.3s ease;
+}
+
+.interests li:hover {
+    background-color: var(--gold);
+    transform: translateY(-2px);
+}
+
+.professional-skills {
+    background: linear-gradient(45deg, var(--deep-brown), var(--medium-brown));
+    color: var(--light-gold);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    border: 1px solid var(--gold);
+}
+
+.skill-tag {
+    display: inline-block;
+    background-color: var(--gold);
+    color: var(--deep-brown);
+    padding: 6px 12px;
+    margin: 4px;
+    border-radius: 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .updates {
