@@ -1,4 +1,5 @@
 :root {
+  /* Base colors */
   --deep-brown: #2C1810;
   --medium-brown: #594031;
   --light-brown: #8B6B4A;
@@ -13,46 +14,47 @@
   --header-bg: var(--deep-brown);
 }
 
-/* Dark mode colors */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg-color: #1a1a1a;
-        --text-color: #e0e0e0;
-        --card-bg: #2d2d2d;
-        --header-bg: #000000;
-    }
+[data-theme="dark"] {
+    --bg-color: var(--deep-brown);
+    --text-color: var(--light-gold);
+    --card-bg: var(--medium-brown);
+    --header-bg: #1a0f0a;
+}
 
-    body {
-        background-color: var(--bg-color);
-        color: var(--text-color);
-    }
+.theme-toggle {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: var(--deep-brown);
+    color: var(--gold);
+    border: 2px solid var(--gold);
+    padding: 10px;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
 
-    .container {
-        background-color: var(--card-bg);
-        border-color: var(--gold);
-    }
+.theme-toggle:hover {
+    transform: scale(1.1);
+    background: var(--gold);
+    color: var(--deep-brown);
+}
 
-    .blog-post, .about-content, .links-section ul li {
-        background-color: var(--card-bg);
-        border-color: var(--gold);
-    }
+[data-theme="dark"] .theme-toggle {
+    background: var(--gold);
+    color: var(--deep-brown);
+}
 
-    .interests {
-        background-color: var(--card-bg);
-    }
-
-    .interests li {
-        background-color: var(--deep-brown);
-        color: var(--light-gold);
-    }
-
-    nav a {
-        color: var(--light-gold);
-    }
-
-    .links-section a {
-        color: var(--light-gold);
-    }
+[data-theme="dark"] .theme-toggle:hover {
+    background: var(--deep-brown);
+    color: var(--gold);
 }
 
 /* About page styles */
