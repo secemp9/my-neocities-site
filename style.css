@@ -1,18 +1,19 @@
 body {
-    background-color: #ffccff;
-    background-image: url('stars.gif');
-    font-family: 'Comic Sans MS', cursive;
+    background-color: #f5f5f5;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     margin: 0;
     padding: 20px;
+    color: #2d2d2d;
 }
 
 .container {
     max-width: 800px;
     margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.9);
-    border: 3px solid #ff66ff;
-    border-radius: 10px;
+    background-color: #ffffff;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
     padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 header {
@@ -20,35 +21,38 @@ header {
 }
 
 h1 {
-    color: #ff33cc;
-    text-shadow: 2px 2px #ffccff;
+    color: #24292e;
+    font-weight: 600;
 }
 
 .marquee {
-    background-color: #000;
+    background-color: #24292e;
     color: #fff;
     padding: 10px;
     margin: 10px 0;
+    border-radius: 4px;
 }
 
 nav {
-    background-color: #ff99ff;
+    background-color: #f6f8fa;
     padding: 10px;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 6px;
     margin: 10px 0;
 }
 
 nav a {
-    color: #660066;
+    color: #0366d6;
     text-decoration: none;
     padding: 5px 15px;
     margin: 0 5px;
+    font-weight: 500;
 }
 
 nav a:hover {
-    background-color: #ff66ff;
-    border-radius: 5px;
+    background-color: #0366d6;
+    color: white;
+    border-radius: 4px;
 }
 
 .profile-section {
@@ -60,32 +64,31 @@ nav a:hover {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 3px solid #ff66ff;
-}
-
-.social-links {
-    margin: 15px 0;
+    border: 2px solid #e1e4e8;
 }
 
 .social-links a {
     display: inline-block;
     padding: 8px 15px;
     margin: 0 5px;
-    background-color: #ff99ff;
-    color: #660066;
+    background-color: #f6f8fa;
+    color: #24292e;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    border-radius: 6px;
+    border: 1px solid #e1e4e8;
+    transition: all 0.2s ease;
 }
 
 .social-links a:hover {
-    background-color: #ff66ff;
+    background-color: #0366d6;
+    color: white;
+    border-color: #0366d6;
 }
 
 .interests {
-    background-color: #ffccff;
+    background-color: #f6f8fa;
     padding: 15px;
-    border-radius: 5px;
+    border-radius: 6px;
     margin: 20px 0;
 }
 
@@ -96,32 +99,36 @@ nav a:hover {
 
 .interests li {
     display: inline-block;
-    background-color: #ff66ff;
-    color: #660066;
+    background-color: #e1e4e8;
+    color: #24292e;
     padding: 5px 15px;
     margin: 5px;
     border-radius: 15px;
+    font-size: 14px;
 }
 
 .updates {
-    background-color: #ffccff;
+    background-color: #f6f8fa;
     padding: 15px;
-    border-radius: 5px;
+    border-radius: 6px;
     margin: 20px 0;
 }
 
 footer {
     text-align: center;
     margin-top: 20px;
-    border-top: 2px dashed #ff66ff;
+    border-top: 1px solid #e1e4e8;
     padding-top: 10px;
+    color: #586069;
 }
 
 .visitor-counter {
-    background-color: #000;
-    color: #0f0;
+    background-color: #24292e;
+    color: #fff;
     display: inline-block;
     padding: 5px 10px;
     font-family: monospace;
     margin-top: 10px;
+    border-radius: 4px;
+    font-size: 14px;
 }
