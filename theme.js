@@ -1,5 +1,15 @@
-// Define default theme explicitly
 const DEFAULT_THEME = 'light';
+
+// Immediately check and apply theme before anything else loads
+(function() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    } else {
+        localStorage.setItem('theme', DEFAULT_THEME);
+        document.documentElement.setAttribute('data-theme', DEFAULT_THEME);
+    }
+})();
 
 function setTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
@@ -22,32 +32,25 @@ function updateThemeIcon(theme) {
 
 // Initialize theme
 function initializeTheme() {
-    // Get theme from localStorage or use default
-    const savedTheme = localStorage.getItem('theme');
-    const themeToSet = savedTheme || DEFAULT_THEME;
-    
-    // Always ensure there's a theme set in localStorage
-    if (!savedTheme) {
-        localStorage.setItem('theme', DEFAULT_THEME);
-    }
-    
-    // Apply theme immediately
-    document.documentElement.setAttribute('data-theme', themeToSet);
-    updateThemeIcon(themeToSet);
+    const savedTheme = localStorage.getItem('theme') || DEFAULT_THEME;
+    setTheme(savedTheme);
 }
 
-// Run initialization as early as possible
-initializeTheme();
+// Run initialization as soon as possible
+document.addEventListener('DOMContentLoaded', initializeTheme);
 
-// Ensure theme is properly set after DOM loads
-document.addEventListener('DOMContentLoaded', () => {
-    const currentTheme = localStorage.getItem('theme') || DEFAULT_THEME;
-    setTheme(currentTheme);
-});
-
-// Add event listener for storage changes (helps with multiple tabs)
+// Handle theme changes across tabs/windows
 window.addEventListener('storage', (e) => {
     if (e.key === 'theme') {
         setTheme(e.newValue || DEFAULT_THEME);
     }
 });
+
+// Force check theme state periodically
+setInterval(() => {
+    const currentTheme = localStorage.getItem('theme') || DEFAULT_THEME;
+    const htmlTheme = document.documentElement.getAttribute('data-theme');
+    if (currentTheme !== htmlTheme) {
+        setTheme(currentTheme);
+    }
+}, 1000);
