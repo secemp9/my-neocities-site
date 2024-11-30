@@ -1,3 +1,14 @@
+html {
+    /* Default to light theme variables */
+    --bg-color: #FDF5E6;  /* cream */
+    --text-color: #2C1810;  /* deep-brown */
+    --card-bg: #ffffff;
+    --header-bg: #2C1810;  /* deep-brown */
+    --link-color: #594031;  /* medium-brown */
+    --link-hover: #D4AF37;  /* gold */
+    --code-bg: #f6f8fa;
+}
+
 :root {
     /* Base colors */
     --deep-brown: #2C1810;

@@ -1,3 +1,6 @@
+// Define default theme explicitly
+const DEFAULT_THEME = 'light';
+
 function setTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
@@ -5,7 +8,7 @@ function setTheme(theme) {
 }
 
 function toggleTheme() {
-    const currentTheme = localStorage.getItem('theme') || 'light';
+    const currentTheme = localStorage.getItem('theme') || DEFAULT_THEME;
     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
 }
@@ -17,21 +20,34 @@ function updateThemeIcon(theme) {
     }
 }
 
-// Initialize theme immediately on page load
+// Initialize theme
 function initializeTheme() {
+    // Get theme from localStorage or use default
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        // Apply saved theme immediately to prevent flash
-        document.documentElement.setAttribute('data-theme', savedTheme);
-        updateThemeIcon(savedTheme);
+    const themeToSet = savedTheme || DEFAULT_THEME;
+    
+    // Always ensure there's a theme set in localStorage
+    if (!savedTheme) {
+        localStorage.setItem('theme', DEFAULT_THEME);
     }
+    
+    // Apply theme immediately
+    document.documentElement.setAttribute('data-theme', themeToSet);
+    updateThemeIcon(themeToSet);
 }
 
-// Run initialization immediately
+// Run initialization as early as possible
 initializeTheme();
 
-// Also set up after DOM loads to ensure button is updated
+// Ensure theme is properly set after DOM loads
 document.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    setTheme(savedTheme);
+    const currentTheme = localStorage.getItem('theme') || DEFAULT_THEME;
+    setTheme(currentTheme);
+});
+
+// Add event listener for storage changes (helps with multiple tabs)
+window.addEventListener('storage', (e) => {
+    if (e.key === 'theme') {
+        setTheme(e.newValue || DEFAULT_THEME);
+    }
 });
