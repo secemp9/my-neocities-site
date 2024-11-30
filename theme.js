@@ -12,10 +12,16 @@ function toggleTheme() {
 
 function updateThemeIcon(theme) {
     const themeToggle = document.querySelector('.theme-toggle');
-    themeToggle.innerHTML = theme === 'dark' ? '☀️' : '🌙';
+    if (themeToggle) {
+        themeToggle.innerHTML = theme === 'dark' ? '☀️' : '🌙';
+    }
 }
 
-// Initialize theme
+// Initialize theme immediately to prevent flash
+const savedTheme = localStorage.getItem('theme') || 'light';
+document.documentElement.setAttribute('data-theme', savedTheme);
+
+// Then set up the rest once DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme') || 'light';
     setTheme(savedTheme);
