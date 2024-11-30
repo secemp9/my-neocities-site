@@ -17,11 +17,20 @@ function updateThemeIcon(theme) {
     }
 }
 
-// Initialize theme immediately to prevent flash
-const savedTheme = localStorage.getItem('theme') || 'light';
-document.documentElement.setAttribute('data-theme', savedTheme);
+// Initialize theme immediately on page load
+function initializeTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        // Apply saved theme immediately to prevent flash
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
+    }
+}
 
-// Then set up the rest once DOM is loaded
+// Run initialization immediately
+initializeTheme();
+
+// Also set up after DOM loads to ensure button is updated
 document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme') || 'light';
     setTheme(savedTheme);
