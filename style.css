@@ -21,6 +21,26 @@
     --header-bg: #1a0f0a;
 }
 
+[data-theme="dark"] h1 {
+    color: var(--light-gold);
+}
+
+[data-theme="dark"] .about-content h2 {
+    color: var(--light-gold);
+}
+
+[data-theme="dark"] .blog-post h2 {
+    color: var(--light-gold);
+}
+
+[data-theme="dark"] .links-section h2 {
+    color: var(--light-gold);
+}
+
+[data-theme="dark"] .links-section a {
+    color: var(--light-gold);
+}
+
 .theme-toggle {
     position: fixed;
     right: 20px;
@@ -133,7 +153,7 @@
 .links-section ul li {
     margin: 15px 0;
     padding: 10px;
-    background: white;
+    background: var(--card-bg);
     border-radius: 6px;
     border: 1px solid var(--light-brown);
     transition: transform 0.2s ease;
@@ -302,7 +322,7 @@ nav a:hover {
 }
 
 .updates {
-    background-color: #f6f8fa;
+    background-color: var(--card-bg);
     padding: 15px;
     border-radius: 6px;
     margin: 20px 0;
@@ -311,14 +331,14 @@ nav a:hover {
 footer {
     text-align: center;
     margin-top: 20px;
-    border-top: 1px solid #e1e4e8;
+    border-top: 1px solid var(--light-brown);
     padding-top: 10px;
-    color: #586069;
+    color: var(--text-color);
 }
 
 .visitor-counter {
-    background-color: #24292e;
-    color: #fff;
+    background-color: var(--deep-brown);
+    color: var(--light-gold);
     display: inline-block;
     padding: 5px 10px;
     font-family: monospace;
