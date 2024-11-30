@@ -5,6 +5,54 @@
   --gold: #D4AF37;
   --light-gold: #F4E4BC;
   --cream: #FDF5E6;
+
+  /* Light theme colors */
+  --bg-color: var(--cream);
+  --text-color: var(--deep-brown);
+  --card-bg: #ffffff;
+  --header-bg: var(--deep-brown);
+}
+
+/* Dark mode colors */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #1a1a1a;
+        --text-color: #e0e0e0;
+        --card-bg: #2d2d2d;
+        --header-bg: #000000;
+    }
+
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+    }
+
+    .container {
+        background-color: var(--card-bg);
+        border-color: var(--gold);
+    }
+
+    .blog-post, .about-content, .links-section ul li {
+        background-color: var(--card-bg);
+        border-color: var(--gold);
+    }
+
+    .interests {
+        background-color: var(--card-bg);
+    }
+
+    .interests li {
+        background-color: var(--deep-brown);
+        color: var(--light-gold);
+    }
+
+    nav a {
+        color: var(--light-gold);
+    }
+
+    .links-section a {
+        color: var(--light-gold);
+    }
 }
 
 /* About page styles */
@@ -273,4 +321,31 @@ footer {
     margin-top: 10px;
     border-radius: 4px;
     font-size: 14px;
+}
+.blog-post.full {
+    padding: 30px;
+    line-height: 1.6;
+}
+
+.blog-post.full h3 {
+    color: var(--gold);
+    margin-top: 25px;
+}
+
+.blog-post.full ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform 0.2s ease;
+}
+
+.read-more:hover {
+    transform: translateX(5px);
 }
