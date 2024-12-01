@@ -50,6 +50,18 @@
         <footer>
             <p>Made with 💖 | Last updated: <span id="lastUpdate"></span></p>
             <div class="visitor-counter">Visitors: 1337</div>
+            <script>
+                // Initialize or increment visitor count
+                const visitorCountKey = 'visitorCount';
+                let visitorCount = parseInt(localStorage.getItem(visitorCountKey), 10) || 1337;
+                visitorCount += 1;
+                localStorage.setItem(visitorCountKey, visitorCount);
+
+                // Display visitor count
+                document.querySelectorAll('.visitor-counter').forEach(counter => {
+                    counter.textContent = `Visitors: ${visitorCount}`;
+                });
+            </script>
         </footer>
     </div>
     <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
