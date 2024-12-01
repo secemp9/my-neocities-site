@@ -50,12 +50,12 @@ function initializeTheme() {
 }
 
 function updateVisitorCount() {
-    fetch('https://neocities.org/api/hits')
+    fetch('https://YOUR_SITE_NAME.neocities.org/api/hits')  // Replace YOUR_SITE_NAME with your actual Neocities site name
         .then(response => response.json())
         .then(data => {
             const visitorCountElement = document.getElementById('visitor-count');
             if (visitorCountElement) {
-                visitorCountElement.textContent = data.count; // Assuming the API returns { count: number }
+                visitorCountElement.textContent = `Visitors: ${data.hits}`;
             }
         })
         .catch(error => console.error('Error fetching visitor count:', error));
