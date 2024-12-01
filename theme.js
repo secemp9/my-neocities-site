@@ -2,23 +2,23 @@ const DEFAULT_THEME = 'light';
 
 // Immediately check and apply theme before anything else loads
 (function() {
-    const savedTheme = sessionStorage.getItem('theme');
+    const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
         document.documentElement.setAttribute('data-theme', savedTheme);
     } else {
-        sessionStorage.setItem('theme', DEFAULT_THEME);
+        localStorage.setItem('theme', DEFAULT_THEME);
         document.documentElement.setAttribute('data-theme', DEFAULT_THEME);
     }
 })();
 
 function setTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
-    sessionStorage.setItem('theme', theme);
+    localStorage.setItem('theme', theme);
     updateThemeIcon(theme);
 }
 
 function toggleTheme() {
-    const currentTheme = sessionStorage.getItem('theme') || DEFAULT_THEME;
+    const currentTheme = localStorage.getItem('theme') || DEFAULT_THEME;
     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
 }
@@ -32,7 +32,7 @@ function updateThemeIcon(theme) {
 
 // Initialize theme
 function initializeTheme() {
-    const savedTheme = sessionStorage.getItem('theme') || DEFAULT_THEME;
+    const savedTheme = localStorage.getItem('theme') || DEFAULT_THEME;
     setTheme(savedTheme);
 }
 
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Force check theme state periodically
 setInterval(() => {
-    const currentTheme = sessionStorage.getItem('theme') || DEFAULT_THEME;
+    const currentTheme = localStorage.getItem('theme') || DEFAULT_THEME;
     const htmlTheme = document.documentElement.getAttribute('data-theme');
     if (currentTheme !== htmlTheme) {
         setTheme(currentTheme);
