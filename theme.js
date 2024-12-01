@@ -50,7 +50,7 @@ function initializeTheme() {
 }
 
 function updateVisitorCount() {
-    fetch('/api/visitor-count') // Replace with your actual API endpoint
+    fetch('https://neocities.org/api/hits')
         .then(response => response.json())
         .then(data => {
             const visitorCountElement = document.getElementById('visitor-count');
