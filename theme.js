@@ -44,6 +44,12 @@ window.addEventListener('storage', (e) => {
     }
 });
 
+// Ensure theme is set correctly on each page load
+document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = sessionStorage.getItem('theme') || DEFAULT_THEME;
+    setTheme(savedTheme);
+});
+
 // Force check theme state periodically
 setInterval(() => {
     const currentTheme = sessionStorage.getItem('theme') || DEFAULT_THEME;
