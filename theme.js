@@ -49,7 +49,22 @@ function initializeTheme() {
     setTheme(savedTheme);
 }
 
-document.addEventListener('DOMContentLoaded', initializeTheme);
+function updateVisitorCount() {
+    fetch('/api/visitor-count') // Replace with your actual API endpoint
+        .then(response => response.json())
+        .then(data => {
+            const visitorCountElement = document.getElementById('visitor-count');
+            if (visitorCountElement) {
+                visitorCountElement.textContent = data.count; // Assuming the API returns { count: number }
+            }
+        })
+        .catch(error => console.error('Error fetching visitor count:', error));
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initializeTheme();
+    updateVisitorCount();
+});
 
 
 // Ensure theme is set correctly on each page load
