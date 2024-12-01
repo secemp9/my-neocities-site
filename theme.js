@@ -36,10 +36,8 @@ function initializeTheme() {
     setTheme(savedTheme);
 }
 
-// Run initialization as soon as possible
 document.addEventListener('DOMContentLoaded', initializeTheme);
 
-// Handle theme changes across tabs/windows
 window.addEventListener('storage', (e) => {
     if (e.key === 'theme') {
         setTheme(e.newValue || DEFAULT_THEME);
