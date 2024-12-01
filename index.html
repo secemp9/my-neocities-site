@@ -71,7 +71,7 @@
             <script>
                 // Initialize or increment visitor count
                 const visitorCountKey = 'visitorCount';
-                let visitorCount = parseInt(sessionStorage.getItem(visitorCountKey), 10) || 1337;
+                let visitorCount = parseInt(sessionStorage.getItem(visitorCountKey), 10) || 0;
                 visitorCount += 1;
                 sessionStorage.setItem(visitorCountKey, visitorCount);
 
