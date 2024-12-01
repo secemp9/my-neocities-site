@@ -50,7 +50,7 @@ function initializeTheme() {
 }
 
 function updateVisitorCount() {
-    fetch('https://YOUR_SITE_NAME.neocities.org/api/hits')  // Replace YOUR_SITE_NAME with your actual Neocities site name
+    fetch('https://your_actual_site_name.neocities.org/api/hits')  // Replace your_actual_site_name with your actual Neocities site name
         .then(response => response.json())
         .then(data => {
             const visitorCountElement = document.getElementById('visitor-count');
