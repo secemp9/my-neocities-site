@@ -1,3 +1,5 @@
+document.documentElement.classList.remove('theme-transition');
+
 const DEFAULT_THEME = 'light';
 
 function setCookie(name, value) {
@@ -24,10 +26,19 @@ function getCookie(name) {
 })();
 
 function setTheme(theme) {
+    // First remove transition class
+    document.documentElement.classList.remove('theme-transition');
+    
+    // Set the theme immediately without transition
     document.documentElement.setAttribute('data-theme', theme);
     sessionStorage.setItem('theme', theme);
     setCookie('theme', theme);
     updateThemeIcon(theme);
+    
+    // Add transition class after a small delay
+    requestAnimationFrame(() => {
+        document.documentElement.classList.add('theme-transition');
+    });
 }
 
 function toggleTheme() {

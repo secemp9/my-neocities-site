@@ -2,6 +2,16 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="color-scheme" content="light dark">
+    <script>
+        (function() {
+            const savedTheme = document.cookie.split('; ').find(row => row.startsWith('theme='))?.split('=')[1] 
+                || sessionStorage.getItem('theme') 
+                || 'light';
+            document.documentElement.classList.remove('theme-transition');
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
     <title>Starting My Web Development Journey - Blog</title>
     <link rel="stylesheet" href="../style.css">
 </head>
